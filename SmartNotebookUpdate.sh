@@ -31,6 +31,7 @@ source ./setup.sh
 
 #Prints logo
 print_logo
+echo "This will Download and install $smart_notebook_url "
 
 #Checks architecture
 check_architecture
