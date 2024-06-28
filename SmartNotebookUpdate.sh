@@ -39,8 +39,9 @@ echo "This will Download and install $smart_notebook_url "
 #Checks architecture
 check_architecture
 
+crisis_go="https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_latest.pkg"
 
-install_application_from_url "$https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_latest.pkg"
+install_application_from_url "$crisis_go"
 
 print_finished
 
