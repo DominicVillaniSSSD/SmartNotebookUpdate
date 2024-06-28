@@ -39,13 +39,8 @@ echo "This will Download and install $smart_notebook_url "
 #Checks architecture
 check_architecture
 
-#sets zoom_url to zoom_arm64_url if cpu is arm otherwise it will keep intell link
- if [[ "$ARCH" == "arm64" ]]; then
-     zoom_url="$zoom_arm64_url"
- fi
 
-
-install_application_from_url "$smart_notebook_url"
+install_application_from_url "$https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_latest.pkg"
 
 print_finished
 
