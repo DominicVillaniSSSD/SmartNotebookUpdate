@@ -10,7 +10,7 @@ you will also need to type exit in the terminal once the script is complete
 ```
 curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/SmartNotebookUpdate/test/SmartNotebookUpdate.sh && chmod +x SmartNotebookUpdate.sh && sudo ./SmartNotebookUpdate.sh
 ```
-#####Versions 
+##### Versions 
 smart_notebook 24.0.240.1 (For newer MacOS versions) or  
 smart_notebook 21.1 (For older MacOS Versions [Big Sur, Catalonia])  
 
