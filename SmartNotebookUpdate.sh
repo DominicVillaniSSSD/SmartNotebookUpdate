@@ -1,36 +1,36 @@
 #!/bin/bash
 # Directory to store the scripts
-
 TEMP_DIR="/tmp/update-scripts"
+#delete the temp directory if it exists already so it will not cause errors
+rm -rf $TEMP_DIR
+
+# Ensure cleanup on exit
+trap 'rm -rf $TEMP_DIR' EXIT
 
 # Create a temporary directory
 mkdir -p $TEMP_DIR
 cd $TEMP_DIR
 
-# Set the branch
+# Set the branch 
+#This means is will pull the rest of the script from SSSDupdate main repo
 branch="main"
 
 # Download necessary scripts
-curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/curl.sh
-curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/install_handlers.sh
-curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/logo.sh
-curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/update/$branch/setup.sh
-# Add more curl commands for additional scripts as needed
-
-# Make the scripts executable
-chmod +x curl.sh install_handlers.sh logo.sh setup.sh
+curl -L -o curl.sh https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDupdate/$branch/curl.sh
+curl -L -o install_handlers.sh https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDupdate/$branch/install_handlers.sh
+curl -L -o logo.sh https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDupdate/$branch/logo.sh
+curl -L -o setup.sh https://raw.githubusercontent.com/DominicVillaniSSSD/SSSDupdate/$branch/setup.sh
 
 # Source or execute the downloaded scripts as needed
-source ./curl.sh
-source ./install_handlers.sh
-source ./logo.sh
-source ./setup.sh
-# Or use `./script1.sh` and `./script2.sh` if they should be executed in a subshell
+source curl.sh
+source install_handlers.sh
+source logo.sh
+source setup.sh
 
-# source setup.sh
-# source install_handlers.sh
-# source curl.sh
-# source logo.sh
+#sets smart notebook url to smart_notebook22.1_url if os version is 11-10.15
+ if [[ "$OS_VERSION" == 11.* || "$OS_VERSION" == 10.15.* ]]; then
+     smart_notebook_url="$smart_notebook22_1_url"
+ fi
 
 #Prints logo
 print_logo
@@ -39,9 +39,7 @@ echo "This will Download and install $smart_notebook_url "
 #Checks architecture
 check_architecture
 
-crisis_go="https://crisisgoapp.s3.amazonaws.com/Mac/CrisisGo_latest.pkg"
-
-install_application_from_url "$crisis_go"
+install_application_from_url "$smart_notebook_url"
 
 print_finished
 
