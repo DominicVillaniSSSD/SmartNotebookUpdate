@@ -14,4 +14,7 @@ curl -O https://raw.githubusercontent.com/DominicVillaniSSSD/SmartNotebookUpdate
 smart_notebook 24.0.240.1 (For newer MacOS versions) or  
 smart_notebook 21.1 (For older MacOS Versions [Big Sur, Catalonia])  
 
-## *Note this script is only validated to work in MacOS Catalonia and up. Some of the Software included in this script is version specific and may need to be changed to work with older version of MacOS
+#### *Note this script is only validated to work in MacOS Catalonia and up. Some of the Software included in this script is version specific and may need to be changed to work with older version of MacOS  
+
+Most the logic for this script is in my other repo https://github.com/DominicVillaniSSSD/SSSDUpdate
+This project and SSSDupdate are free and open source feel free to fork or redistribute
